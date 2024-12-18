@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5vw;
+            color: black;
+            height: 10vh;
+        }
+
+        .logo-img {
+            width: 7vw;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 1001;
+           
+        }
+
+        .cart-sidebar .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            cursor: pointer;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+
+        .info{
+
+             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1vh;
+            padding-bottom: 5vh;
+
+        }
+
+
+        .imgs{
+
+            width: 30%;
+
+        }
+
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo-div">
+            <img class="logo-img" src="/assets/Screenshot (46).png" alt="Logo">
+        </div>
+        <nav>
+            
+            <i class="fa fa-search" style="font-size:24px"></i>
+            <a href="/profile"><i class="fa fa-user" style="font-size:25px"></i></a>
+            <a href="javascript:void(0);" onclick="openCart()"><i class="fa fa-shopping-cart" style="font-size:25px"></i></a>
+        </nav>
+    </div>
+
+    
+    <div id="cartSidebar" class="cart-sidebar">
+        <span class="closebtn" onclick="closeCart()">&times;</span>
+        <h2>Your Cart</h2>
+    
+{{#each getCarts}}
+
+
+<div class="info">
+    <img class="imgs" src="{{imageUrl}}" alt="Error">
+    <h1>{{productName}}</h1>
+    <p><strong>Description:</strong> {{description}}</p>
+    <p><strong>Price:</strong> ${{price}}</p>
+    <p><strong>Quantity:</strong> {{qty}}</p>
+</div>
+
+
+{{else}}
+
+
+<p>{{message}}</p> 
+
+
+{{/each}}
+
+
+    </div>
+
+    
+    <div id="overlay" class="overlay" onclick="closeCart()"></div>
+
+
+    <script>
+        function openCart() {
+            document.getElementById("cartSidebar").style.width = "50%"; 
+            document.getElementById("overlay").style.display = "block"; 
+        }
+
+        function closeCart() {
+            document.getElementById("cartSidebar").style.width = "0"; 
+            document.getElementById("overlay").style.display = "none"; 
+        }
+    </script>
+
+</body>
+
+</html>

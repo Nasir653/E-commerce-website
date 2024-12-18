@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-imgs {
+
+      height: 90vh;
+
+    }
+
+    .header-imgs img {
+      width: 100vw;
+      height: 90vh;
+    }
+
+.content{
+ margin-top: 20vh;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ gap: 6vh;
+
+}
+    .allProducts {
+      display: flex;
+      
+      gap: 2vw;
+      width: 98%;
+      height: 83vh;
+      text-align: center;
+      padding-left: 1%;
+     
+
+      >.items {
+
+        display: flex;
+        flex-direction: column;
+        width: 23%;
+        gap: 0.5vw;
+        box-shadow: 0.2vw 0.2vw 0.5vw 0.2vw rgb(198, 197, 196);
+        padding: 0.5vw;
+      transition: 0.5s;
+      
+      
+         
+        
+           >h2{
+
+            >a{
+               text-decoration: none;
+
+            }
+
+
+           }
+
+
+        >a {
+            
+          >img {
+            height: 60vh;
+            width: 90%;
+          }
+          
+        }
+
+      }
+
+      .items:hover{
+        scale: 1.01;
+      }
+
+
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+
+
+
+
+  <div class="header-imgs">
+
+    {{#each launchImgs}}
+
+    <img src="{{this.imageUrl}}" alt="error">
+
+
+
+    {{/each}}
+
+
+  </div>
+
+
+
+
+
+
+
+   <div class="content">
+
+<h1>SEASONAL FAVS </h1>
+
+  <div class="allProducts">
+
+    
+
+    {{#each products}}
+
+    <div class="items">
+
+      <a href="/productDetails/{{this._id}}"> <img src="{{this.imageUrl}}"> </a>
+      <h2><a href="/productDetails/{{this._id}}"> {{this.productName}} </a> </h2>
+      <p>Description {{this.description}}</p>
+      <p>Price : {{this.price}}</p>
+      <p>Quantity : {{this.qty}}</p>
+
+
+
+    </div>
+
+
+    {{/each}}
+
+  </div>
+
+
+</div>
+</body>
+
+</html>

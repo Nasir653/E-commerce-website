@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{getPro.productName}} - Product Details</title>
+    <link rel="stylesheet" href="/styles.css"> 
+
+  <style>
+
+
+.details{
+    display: flex;
+    gap: 3vw;
+   padding: 2vw;
+   width: 50%;
+   box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.addToCart{
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  width: 7vw;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+}
+
+
+  </style>
+
+
+
+</head>
+<body>
+
+   <div class="details">
+ 
+  <img src="{{getPro.imageUrl}}" alt="Error" style="width: 20%;">
+
+  <div class="info"> 
+
+    <h1>{{getPro.productName}}</h1>
+    <p><strong>Description:</strong> {{getPro.description}}</p>
+    <p><strong>Price:</strong> ${{getPro.price}}</p>
+    <p><strong>Quantity:</strong> {{getPro.qty}}</p>
+    <a href="/products">Back to Products List</a> 
+    <a class="addToCart" href="/cart">Add to Cart</a>
+
+    </div>
+   
+
+
+
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+<style>
+    
+ 
+  .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 30vw;
+        margin: 5vw 5vw 5vw 35vw;
+         border:2px solid black;
+         padding: 2vw;
+       
+
+
+        >form{
+           
+            display: flex;
+            flex-direction: column;
+           
+            width: 100%;
+           gap: 2vh;
+
+           >input{
+
+               height: 4vh;
+               border-radius: 3vw;
+               border-style: none;
+               background-color: rgb(238, 238, 235);
+               padding-left: 0.8vw;
+               
+         }
+         
+         >label{
+            font-size: 1.2vw;
+            font-weight: 600;
+         }
+
+         >button{
+            height: 5vh;
+            background-color: black;
+            color: blanchedalmond;
+            width: 40%;
+            margin: auto;
+            border-radius: 3vw;
+            border-style: none;
+            font-size: 1.1vw;
+         }
+
+         >h1{
+            margin: auto;
+            color: rgb(139, 62, 7);
+         }
+
+        }
+    }
+
+.launch{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1vw;
+  
+
+
+   >form{
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+      padding-bottom: 5vh;
+
+      >button{
+         width: 30%;
+         height: 5vh;
+         margin: auto;
+         background-color: brown;
+         color: white;
+         border-radius: 3vw;
+         border-style: none;
+      }
+      >input{
+         background-color: antiquewhite;
+      }
+   }
+}
+
+</style>
+
+
+
+<div class="main">
+
+
+  <form action="/Createproducts" method="post"  enctype="multipart/form-data">
+
+ <h1>Create Your Products</h1>
+  
+ <label> Product Name :</label>
+ <input type="text" name="productName">
+
+ <label>Des :</label>
+ <input type="text" name="description">
+ <label>Price :</label>
+ <input type="number" name="price">
+ <label> Qty :</label>
+ <input type="number" name="qty">
+
+ <label for="image">Upload Image</label>
+ <input type="file" name="image">
+
+  <button type="submit">Create</button>
+  
+  
+  </form>
+
+
+
+</div>
+<hr>
+
+<div class="launch">
+<h1>Upload Your New Lunched Products</h1>
+
+ <form action="/launchproducts" method="post"  enctype="multipart/form-data">
+ 
+ 
+
+  <input type="file" name="image"  required>
+  
+
+  <button type="submit">Upload</button>
+
+
+
+ 
+ 
+ </form>
+
+
+</div>

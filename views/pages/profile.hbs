@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles</title>
+
+    <style>
+
+      img{
+        width: 10%;
+      }
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="profile">
+
+<form action="/profile" method="post" enctype="multipart/form-data" >
+
+<input type="file" name="image"> 
+
+<button type="submit">Insert</button>
+
+</form>
+
+
+
+
+<img src="{{getprofileData.profileImg}}" alt="Error">
+
+  <h4>{{getprofileData.username}}</h4>
+  <p>{{getprofileData.email}}</p>
+
+ 
+
+
+
+</div>
+   
+    
+    
+</body>
+</html>
